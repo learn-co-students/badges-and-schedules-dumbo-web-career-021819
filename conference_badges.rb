@@ -5,13 +5,7 @@ end
 def batch_badge_creator(namesArr)
   batchArr = []
   
-  i = 0
-  
-  while i < namesArr.length
-  batchArr << badge_maker(namesArr[i])
-  
-  i += 1
-  end
+  namesArr.each {|name| batchArr << badge_maker(name)}
   
   return batchArr
 end
@@ -19,13 +13,8 @@ end
 def assign_rooms(speakers)
   roomsArr = []
   
-  j = 0
- 
-  while j < speakers.length
-  roomsArr << "Hello, #{speakers[j]}! You'll be assigned to room #{j + 1}!"
+  speakers.each_with_index {|speaker, index| roomsArr << "Hello, #{speaker}! You'll be assigned to room #{index + 1}!"}
   
-  j += 1
-  end
   
   return roomsArr
 end
